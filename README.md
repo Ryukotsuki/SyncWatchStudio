@@ -1,4 +1,5 @@
 # Sync Watch Studio
+<img width="1536" height="1024" alt="SyncWatchStudio" src="https://github.com/user-attachments/assets/0786a5fd-f947-419b-96bd-22420aae963d" />
 
 Sync Watch Studio is a desktop watch-party application for synchronized video playback, chat, and playlist-based viewing. It combines a PySide6 interface with mpv playback and WebSocket networking so a host and viewers can stay in sync while watching local files or supported online media together.
 
