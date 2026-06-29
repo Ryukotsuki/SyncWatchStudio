@@ -1,98 +1,136 @@
-# 🎬 Sync Watch Studio
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/52b484c0-3e86-420a-a6c3-5402ed9606cd" alt="Sync Watch Studio preview" height="360" />
+</p>
 
-<img height="440" alt="SyncWatchStudio" src="https://github.com/user-attachments/assets/52b484c0-3e86-420a-a6c3-5402ed9606cd" />
+<h1 align="center">Sync Watch Studio</h1>
 
-Sync Watch Studio is a desktop watch-party application for synchronized video playback, chat, and playlist-based viewing. It combines a PySide6 interface with mpv playback and WebSocket networking so a host and viewers can stay in sync while watching local files or supported online media together.
+<p align="center">
+  A desktop watch-party app for synchronized video playback, playlist viewing, and real-time chat with friends.
+</p>
+
+<p align="center">
+  <a href="https://github.com/Ryukotsuki/SyncWatchStudio/releases"><img src="https://img.shields.io/github/v/release/Ryukotsuki/SyncWatchStudio?style=for-the-badge&label=Latest%20Release" alt="Latest release"></a>
+  <a href="https://github.com/Ryukotsuki/SyncWatchStudio/releases"><img src="https://img.shields.io/github/downloads/Ryukotsuki/SyncWatchStudio/total?style=for-the-badge" alt="Downloads"></a>
+  <a href="https://github.com/Ryukotsuki/SyncWatchStudio/stargazers"><img src="https://img.shields.io/github/stars/Ryukotsuki/SyncWatchStudio.svg?style=for-the-badge" alt="Stars"></a>
+  <a href="https://github.com/Ryukotsuki/SyncWatchStudio/issues"><img src="https://img.shields.io/github/issues/Ryukotsuki/SyncWatchStudio.svg?style=for-the-badge" alt="Issues"></a>
+</p>
 
 ---
 
-## 📊 **Stats**
-
-[![Downloads][downloads-shield]][downloads-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-
-# 🖥️ Preview
-
-<img width="1920" height="1032" alt="Screenshot 2026-06-19 013010" src="https://github.com/user-attachments/assets/d9a87797-b051-4420-96dc-c713114e1f5f" />
-
 ## ✨ Features
 
-* 🎥 Synchronized playback between a host and connected viewers
-* 🌐 Host and join workflow using a shareable WebSocket address
-* 🔒 Tailscale-friendly networking for private watch sessions without router port forwarding
-* ▶️ Local video playback through mpv and libmpv
-* 🌍 Online media support through yt-dlp and FFmpeg tools
-* 💬 Built-in room chat with usernames, avatars, timestamps, emoji, GIF, and sticker support
-* 👥 Viewer list with host/viewer presence
-* 📃 Playlist support for local files and URLs
-* 🎯 Automatic sync correction when viewers drift from the host
-* ⏩ Host seek buffering so viewers can catch up after major seek changes
-* 🎧 Audio and subtitle language preferences
-* 🔄 Optional automatic download/update flow for required external tools
+- 🎥 **Synchronized Playback**  
+  Keep viewers matched to the host's media, playback state, seek position, and stop events.
+
+- 🌐 **Host and Join Sessions**  
+  Create a room as host or join with a shareable WebSocket address.
+
+- 🔒 **Tailscale-Friendly Networking**  
+  Designed for private watch sessions without router port forwarding.
+
+- ▶️ **Local Video Playback**  
+  Plays local media through mpv and libmpv.
+
+- 🌍 **Online Media Support**  
+  Supports compatible online media through yt-dlp and FFmpeg tools.
+
+- 💬 **Built-In Room Chat**  
+  Chat with usernames, avatars, timestamps, emoji, GIF, and sticker support.
+
+- 📃 **Playlist Viewing**  
+  Queue local files or supported URLs for shared playback.
+
+- 🎯 **Automatic Sync Correction**  
+  Helps viewers recover when playback drifts from the host.
+
+- 🎧 **Audio and Subtitle Preferences**  
+  Configure preferred audio and subtitle languages.
+
+- 🔄 **External Tool Management**  
+  Can download or update required playback tools when needed.
+
+---
+
+## 📸 Preview
+
+<p align="center">
+  <img width="1920" height="1032" alt="Sync Watch Studio screenshot" src="https://github.com/user-attachments/assets/d9a87797-b051-4420-96dc-c713114e1f5f" />
+</p>
+
+---
+
+## 🚀 Getting Started
+
+### ⬇️ Download
+
+Download the latest release from the [Releases page](https://github.com/Ryukotsuki/SyncWatchStudio/releases).
+
+### ⚡ Quick Start
+
+1. Download the latest release archive.
+2. Extract it to a folder you can write to.
+3. Run **Sync Watch Studio** from the extracted folder.
+4. If prompted, allow the app to download missing external tools.
+5. Restart the app if the tool setup asks you to.
+
+---
+
+## 🖥️ Hosting a Session
+
+1. Open Sync Watch Studio.
+2. Go to the `Settings` tab.
+3. Set your username, room name, Tailscale host address, and port.
+4. Go to the `Network` tab.
+5. Click `Start as Host`.
+6. Copy the generated address and send it to your viewers.
+7. Open a local file, paste a media URL, or start a playlist item.
+
+---
+
+## 👥 Joining a Session
+
+1. Open Sync Watch Studio.
+2. Go to the `Settings` tab and set your username.
+3. Go to the `Network` tab.
+4. Paste the host address into the `Host address` field.
+5. Click `Connect to Host`.
+
+Once connected, viewers automatically follow the host's current media, playback state, seek position, and stop events.
+
+---
 
 ## 📋 Requirements
 
-* 🪟 Windows
-* 🔒 Tailscale for remote private-network sessions
+- 🪟 Windows
+- 🔒 Tailscale for remote private-network sessions
 
 ### 🧰 External Tools
 
-* 🎬 `mpv.exe`
-* 🎬 `libmpv-2.dll`
-* 🌍 `yt-dlp.exe`
-* 🎞️ `ffmpeg.exe`
-* ▶️ `ffplay.exe`
-* 🔍 `ffprobe.exe`
+Sync Watch Studio uses the following tools for playback and online media support:
+
+- `mpv.exe`
+- `libmpv-2.dll`
+- `yt-dlp.exe`
+- `ffmpeg.exe`
+- `ffplay.exe`
+- `ffprobe.exe`
 
 The app can download missing external tools on startup. Bundled or downloaded tools are stored with the application files.
 
 ---
 
-# 📦 Installation
+## 🔒 Tailscale Notes
 
-1. 📥 Download the latest Sync Watch Studio release from GitHub.
-2. 📂 Extract the release archive to a folder you can write to.
-3. ▶️ Run Sync Watch Studio from the extracted folder.
-4. 🔄 If prompted, allow Sync Watch Studio to download missing external tools, then restart the app if requested.
+Sync Watch Studio is designed to work well over Tailscale. Hosts and viewers should be connected to the same Tailscale network.
 
----
+### For Hosts
 
-# 🚀 Quick Start
+- Use your Tailscale IPv4 address or device name in the app's Tailscale host setting.
+- Keep the configured TCP port available.
+- Allow inbound TCP traffic for Sync Watch Studio in Windows Firewall.
+- If the preferred port is busy, share the alternate address shown by the app.
 
-## 🖥️ Hosting a Session
-
-1. ▶️ Open Sync Watch Studio.
-2. ⚙️ Go to the `Settings` tab.
-3. 👤 Set your username, room name, Tailscale host address, and port.
-4. 🌐 Go to the `Network` tab.
-5. 🟢 Click `Start as Host`.
-6. 📋 Copy the generated address and send it to your viewers.
-7. 🎬 Open a local video file, paste a media URL, or start a playlist item.
-
-## 👥 Joining a Session
-
-1. ▶️ Open Sync Watch Studio.
-2. 👤 Go to the `Settings` tab and set your username.
-3. 🌐 Go to the `Network` tab.
-4. 📋 Paste the host address into the `Host address` field.
-5. 🔗 Click `Connect to Host`.
-
-✨ When connected, the viewer automatically follows the host's current media, playback state, seek position, and stop events.
-
----
-
-# 🔒 Tailscale Setup Notes
-
-Sync Watch Studio is designed to work well over Tailscale. Both the host and viewers should be connected to the same Tailscale network.
-
-## 🖥️ For the Host
-
-* 🌐 Use your Tailscale IPv4 address or device name in the app's Tailscale host setting.
-* 🚪 Keep the configured TCP port available, or share the alternate address shown by the app if the preferred port is busy.
-* 🛡️ Allow inbound TCP traffic for the Sync Watch Studio executable in Windows Firewall.
-
-## 👥 For Viewers
+### For Viewers
 
 Paste the exact address shown by the host, such as:
 
@@ -102,96 +140,80 @@ ws://100.x.y.z:8765
 
 ---
 
-# ⚙️ Configuration
+## ⚙️ Configuration
 
 User settings are saved locally with the application files.
 
 Settings include:
 
-* 👤 Username and avatar
-* 🏠 Room name
-* 🌐 Tailscale host address and port
-* 🔤 Chat font size
-* 🕒 Timestamp and join/leave visibility
-* 🎧 Audio and subtitle language preferences
-* 💬 Subtitle startup behavior
+- 👤 Username and avatar
+- 🏠 Room name
+- 🌐 Tailscale host address and port
+- 🔤 Chat font size
+- 🕒 Timestamp and join/leave visibility
+- 🎧 Audio and subtitle language preferences
+- 💬 Subtitle startup behavior
 
 ---
 
-# 🛠️ Troubleshooting
+## 🛠 Troubleshooting
 
-## ❌ External Tools Are Missing
+### ❌ External Tools Are Missing
 
-If playback is unavailable or the app reports missing tools:
+- Use the in-app external tools download prompt.
+- Delete incomplete files under `External/` and let the app download them again.
 
-* 🧰 Use the in-app external tools download prompt.
-* 🗑️ Delete incomplete files under `External/` and let the app download them again.
+### ❌ Viewers Cannot Connect
 
----
+- Make sure Tailscale is running on both devices.
+- Confirm the host address was copied exactly from the app.
+- Allow inbound TCP traffic through Windows Firewall.
+- Confirm the host is still running and has not clicked `Stop Hosting`.
 
-## ❌ Viewers Cannot Connect
+### ❌ Online Media Does Not Start
 
-Check that:
+- Make sure yt-dlp is installed.
+- Make sure FFmpeg is installed.
+- Update both tools if the source website recently changed.
 
-* 🔒 Tailscale is running on both devices.
-* 📋 The host address was copied exactly from the app.
-* 🛡️ Windows Firewall allows inbound TCP traffic on the displayed port.
-* 🟢 The host is still running and has not clicked `Stop Hosting`.
+### ❌ Local Files Do Not Load for Viewers
 
----
+When the host opens a local file, Sync Watch Studio serves it from the host machine through the session address.
 
-## ❌ Playback Does Not Start for Online Media
-
-Online media support depends on yt-dlp and FFmpeg.
-
-Make sure:
-
-* 🌍 yt-dlp is installed.
-* 🎞️ FFmpeg is installed.
-* 🔄 Both are up to date.
+- Confirm viewers can reach the host over Tailscale.
+- Confirm the displayed port is allowed through Windows Firewall.
 
 ---
 
-## ❌ Local Files Do Not Load for Viewers
+## 📜 License
 
-When the host opens a local file, Sync Watch Studio serves it from the host machine so viewers can load it through the session address.
-
-If viewers cannot load the file, confirm that:
-
-* 🔒 They can reach the host over Tailscale.
-* 🌐 The displayed port is allowed through Windows Firewall.
-
----
-
-# 📜 License
-
-📄 Sync Watch Studio is licensed under the GNU Lesser General Public License v3.0.
+Sync Watch Studio is licensed under the **GNU Lesser General Public License v3.0**.
 
 See the `LICENSE` file for the full LGPLv3 license text.
 
 ---
 
-# 💖 Support and Contributions
+## 💖 Support
 
-If you enjoy **Sync Watch Studio** and want to support its development, consider donating.
+If Sync Watch Studio helps you, a star on GitHub goes a long way.
 
-* ❤️ [Donate via PayPal](https://paypal.me/Ryukotsuki?country.x=US&locale.x=en_US)
+- ⭐ Star the repository
+- 🐛 Report bugs through [Issues](https://github.com/Ryukotsuki/SyncWatchStudio/issues)
+- 💡 Suggest improvements or new features
+- 💸 [Donate via PayPal](https://paypal.me/Ryukotsuki?country.x=US&locale.x=en_US)
 
-Have questions or suggestions?
+### 💬 Community
 
-* 💬 Join our community Discord!
+Have questions, feedback, or ideas? Join the Discord:
 
-[![Join Discord](https://github.com/user-attachments/assets/09fb5822-5e82-431b-b9cc-bbd4111ba48b)](https://discord.gg/HdfjKbPNc9)
+<p align="center">
+  <a href="https://discord.gg/HdfjKbPNc9">
+    <img src="https://github.com/user-attachments/assets/09fb5822-5e82-431b-b9cc-bbd4111ba48b" alt="Join Discord" />
+  </a>
+</p>
 
 ---
 
-⭐ **If you find Sync Watch Studio useful, consider giving the repository a star!** ⭐
-
----
-
-[downloads-shield]: https://img.shields.io/github/downloads/Ryukotsuki/SyncWatchStudio/total?style=for-the-badge
-[downloads-url]: https://github.com/Ryukotsuki/SyncWatchStudio/releases
-[stars-shield]: https://img.shields.io/github/stars/Ryukotsuki/SyncWatchStudio.svg?style=for-the-badge
-[stars-url]: https://github.com/Ryukotsuki/SyncWatchStudio/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Ryukotsuki/SyncWatchStudio.svg?style=for-the-badge
-[issues-url]: https://github.com/Ryukotsuki/SyncWatchStudio/issues
+<p align="center">
+  Built for watch parties that stay in sync. ✨
+</p>
